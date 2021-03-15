@@ -3,9 +3,9 @@
 
   ## Spider Version 1.0 - crawler pentru laboratoare
   ### *Fisiere*
-    chromedriver 
-    spider.py -
-    students - fisier .txt unde se afla numele studentilor a caror laboratoare le dorim descarcate
+   - chromedriver 
+   - spider.py -
+   - students - fisier .txt unde se afla numele studentilor a caror laboratoare le dorim descarcate
                **IMPORTANT** - numele studentului corespunde 1 la 1 cu _numele utilizatorului de pe teams_ sau coloana _Prenume / Nume_ de pe _cs curs_ din sectiunea de upload/
          
          
