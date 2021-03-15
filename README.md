@@ -11,7 +11,7 @@
          
          
   ### *Rulare*
-    python3 spider.py id username parola
+    python3 spider.py id username password
    - **id** - Pentru obtinerea id-ului se urmeaza urmatorii pasi
       - Se intra pe upload-ul dorit (Ex. Upload labolator 1)
       - De pe url, se selecteaza id-ul (Ex. ...curs.upb.ro/mod/assign/view.php?id=_**204760**_)
@@ -20,5 +20,6 @@
       
       
  ### *Mentiune*
-  In sectiunea de upload, **Prenumele** si **Numele** trebuie neaparat sa fie setat pe **Toate**
+   - In sectiunea de upload, **Prenumele** si **Numele** trebuie neaparat sa fie setat pe **Toate**
+   - Rezultatele vor fi salvare in directorul **labs** (Se va crea automat) 
   
