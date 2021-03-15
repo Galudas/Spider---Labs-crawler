@@ -4,19 +4,22 @@ from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 
+
 class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
+	HEADER = '\033[95m'
+	OKBLUE = '\033[94m'
+	OKCYAN = '\033[96m'
+	OKGREEN = '\033[92m'
+	WARNING = '\033[93m'
+	FAIL = '\033[91m'
+	ENDC = '\033[0m'
+	BOLD = '\033[1m'
+	UNDERLINE = '\033[4m'
+
 
 ELEM = 'unselectedrow'
 ZIP = '.c8 td:nth-child(2) a'
+
 
 def get_students_names(file: str):
 	f = open(file, "r")
@@ -29,16 +32,16 @@ def create_options_selenium():
 	options.headless = True
 	options.add_argument('--no-sandbox')
 	options.add_argument('--disable-dev-shm-usage')
-	options.add_experimental_option("prefs", {"download.default_directory":  r"labs", "download.prompt_for_download": False, "download.directory_upgrade": True,  "safebrowsing.enabled": True})
+	options.add_experimental_option("prefs",
+	                                {"download.default_directory": r"labs", "download.prompt_for_download": False,
+	                                 "download.directory_upgrade": True, "safebrowsing.enabled": True})
 	return options
 
 
 def get_labs(link: str, u: str, p: str):
 	students = get_students_names("students")
 
-	driver = webdriver.Remote(
-		command_executor='http://127.0.0.1:4444/wd/hub',
-		desired_capabilities=DesiredCapabilities.CHROME, options=create_options_selenium())
+	driver = webdriver.Chrome(executable_path='./chromedriver',options=create_options_selenium())
 
 	pageNr = 0
 	savedElem = []
@@ -50,7 +53,7 @@ def get_labs(link: str, u: str, p: str):
 	driver.implicitly_wait(2)
 	driver.find_element_by_id("loginbtn").click()
 	driver.implicitly_wait(2)
-	print(bcolors.OKCYAN +  "Logged In")
+	print(bcolors.OKCYAN + "Logged In")
 	while True:
 		driver.get(link + pageNr.__str__())
 		driver.implicitly_wait(2)
@@ -68,10 +71,12 @@ def get_labs(link: str, u: str, p: str):
 			t = save_elem[0].find_elements_by_css_selector(ZIP)
 			if len(t) > 0:
 				driver.get(t[0].get_attribute("href"))
-				print(bcolors.OKGREEN + save_elem[1]," lab downloaded")
+				print(bcolors.OKGREEN + save_elem[1], " lab downloaded")
 			else:
-				print(bcolors.FAIL + save_elem[1]," didn't uploaded the lab")
+				print(bcolors.FAIL + save_elem[1], " didn't uploaded the lab")
 	print(bcolors.ENDC + "All .zip files are downloaded")
 
+
 if __name__ == '__main__':
-	get_labs(sys.argv[1], sys.argv[2], sys.argv[3])
+	get_labs('https://curs.upb.ro/mod/assign/view.php?action=grading&id=' + sys.argv[1] + '&page=', sys.argv[2],
+	         sys.argv[3])
