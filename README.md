@@ -14,8 +14,8 @@
     python3 spider.py id username parola
    - **id**
      - Pentru obtinerea id-ului se urmeaza urmatorii pasi
-            1). Se intra pe upload-ul dorit (Ex. Upload labolator 1)
-            2). De pe url, se selecteaza id-ul (Ex. https://curs.upb.ro/mod/assign/view.php?id=**204760**)
+      1). Se intra pe upload-ul dorit (Ex. Upload labolator 1)
+      2). De pe url, se selecteaza id-ul (Ex. https://curs.upb.ro/mod/assign/view.php?id=**204760**)
    - **username** -> nume utilizator cs curs
    - **password** -> parola utilizator
       
