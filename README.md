@@ -1,15 +1,15 @@
-## Spider Labs-crawler
+# Spider Labs-crawler
 
 
-  # Spider Version 1.0 - crawler pentru laboratoare
-  *Fisiere*
+  ## Spider Version 1.0 - crawler pentru laboratoare
+  ### *Fisiere*
     chromedriver 
     spider.py -
     students - fisier .txt unde se afla numele studentilor a caror laboratoare le dorim descarcate
                **IMPORTANT** - numele studentului corespunde 1 la 1 cu _numele utilizatorului de pe teams_ sau coloana _Prenume / Nume_ de pe _cs curs_ din sectiunea de upload/
          
          
-  *Rulare*
+  ### *Rulare*
     **python3 spider.py id username parola**
        id -> 
         Pentru obtinerea id-ului se urmeaza urmatorii pasi
@@ -19,6 +19,6 @@
       password -> parola utilizator
       
       
-  *Mentiune*
+ ### *Mentiune*
     In sectiunea de upload, **Prenumele** si **Numele** trebuie neaparat sa fie setat pe **Toate**
   
