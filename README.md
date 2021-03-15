@@ -1,1 +1,1 @@
-# Spider---Labs-crawler
+# Spider Labs-crawler
