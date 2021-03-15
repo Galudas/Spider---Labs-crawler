@@ -1,7 +1,7 @@
 ## Spider Labs-crawler
 
 
-  Spider Version 1.0 - crawler pentru laboratoare
+  # Spider Version 1.0 - crawler pentru laboratoare
   *Fisiere*
     chromedriver 
     spider.py -
